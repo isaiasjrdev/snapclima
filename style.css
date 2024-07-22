@@ -1,32 +1,32 @@
-* {
+*{
     margin: 0;
     padding: 0;
 }
 
-body {
+body{
     background: #f3f4fb;
-    font-family: 'Inter', sans-serif;
+    font-family: 'inter', sans-serif;
     -webkit-font-smoothing: antialiased;
 }
 
-.header, .temperature-details, .sunset-sunrise {
+.header, .temperature-details, .sunset-sunrise{
     max-width: 600px;
     margin: 0 auto;
 }
 
-/* header*/
-.header {
+/* Header */
+.header{
     padding: 0 30px;
 }
 
-.header__city-search-bar {
+.header__city-search-bar{
     display: flex;
     justify-content: center;
-    align-items: center;
     margin-top: 30px;
+    align-items: center;
 }
 
-.header__input {
+.header__input{
     border: none;
     width: 100%;
     height: 40px;
@@ -36,7 +36,7 @@ body {
     margin-right: -15px;
 }
 
-.header__button {
+.header__button{
     cursor: pointer;
     min-width: 50px;
     min-height: 50px;
@@ -48,109 +48,111 @@ body {
     align-items: center;
     justify-content: center;
     transition: 0.2s;
-    box-shadow: rgba(50, 50, 93, 0,25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px ;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
-.header__button:hover {
+
+.header__button:hover{
     filter: brightness(1.25);
 }
 
 .header__current-date,
 .header__city-name{
-    font-family: "Ubuntu", sans-serif;
+    font-family: 'ubuntu', sans-serif;
 }
 
-.header__current-date {
+.header__current-date{
     color: #a2a2be;
     font-size: 14px;
     margin-top: 15px;
 }
 
-.header__city-name {
+.header__city-name{
     font-weight: 500;
     font-size: 20px;
     margin-top: 6px;
 }
 
-/* current temperature*/
+/* current temperature */
 
-.current-temperature {
+.current-temperature{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
 }
 
-.current-temperature__weather-icon {
+.current-temperature__weather-icon{
     width: 125px;
     margin-top: 15px;
 }
 
-.current-temperature__description {
+.current-temperature__description{
     color: #b6aef0;
     font-weight: 500;
     font-size: 24px;
     margin-top: 30px;
 }
 
-.current-temperature__info-label {
+.current-temperature__info-label{
     margin-top: 15px;
     color: #a2a2be;
 }
 
-.current-temperature__current-temperature {
+.current-temperature__current-temperature{
     font-size: 24px;
     font-weight: 500;
     margin-top: 10px;
 }
+.current-temperature__description::first-letter{
+    text-transform: uppercase;
+}
 
 /* bottom container */
 
-.bottom-container {
+.bottom-container{
     background: #fff;
     position: absolute;
     bottom: 0;
     width: 100%;
     border-radius: 25px 25px 0 0;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-.temperature-details {
+.temperature-details{
     display: flex;
     margin-top: 30px;
 }
 
-.temperature-details__item {
+.temperature-details__item{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-right:  1px solid #a2a2be;
+    border-right: 1px solid #a2a2be;
 }
 
-.temperature-details__item:last-child {
+.temperature-details__item:last-child{
     border: none;
 }
 
-.temperature-details__label {
+.temperature-details__label{
     color: #a2a2be;
 }
 
 .temperature-details__value,
-.sunset-sunrise__value {
+.sunset-sunrise__value{
     font-weight: 500;
     margin-top: 7px;
 }
 
-/*sun */
+/* sun */
 
-.sunset-sunrise {
+.sunset-sunrise{
     display: flex;
-    margin: 30px 0;
+    margin: 30px auto;
 }
 
-.sunset-sunrise__item {
+.sunset-sunrise__item{
     width: 100%;
     display: flex;
     flex-direction: column;
