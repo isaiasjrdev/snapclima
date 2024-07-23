@@ -1,6 +1,6 @@
 //Interação
 const citySearchInput = document.getElementById('city-search-input');
-const citySearchButton = document.getElementById('city-search-button');
+let citySearchButton = document.getElementById('city-search-button');
 
 //exibição
 const currentDate = document.getElementById('current-date');
@@ -21,6 +21,20 @@ citySearchButton.addEventListener('click', () => {
     getCityWeather(cityName)
 })
 
+/* 
+citySearchInput.addEventListener('keypress', 'click' (event) => {
+    if (event.key === 'Enter' || 'click' === citySearchButton) {
+        let cityName = citySearchInput.value
+        getCityWeather(cityName)
+    }   
+})
+
+citySearchButton.addEventListener('click', () => {
+    let cityName = citySearchInput.value
+    getCityWeather(cityName)
+
+*/
+
 //https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
 
 navigator.geolocation.getCurrentPosition(
@@ -28,18 +42,18 @@ navigator.geolocation.getCurrentPosition(
         let lat = position.coords.latitude
         let lon = position.coords.longitude
 
-        getCurrentLocationWeather(lat, lon )
+        getCurrentLocationWeather(lat, lon)
     },
     (err) => {
         if (err.code === 1) {
-            alert("Geolocalizçaõ negada pelo usuario")
-        }else{
+            alert("Geolocalização negada pelo usuário")
+        } else {
             console.log(err)
         }
     }
 )
 
-function getCurrentLocationWeather(lat , lon) {
+function getCurrentLocationWeather(lat, lon) {
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${api_key}`)
         .then((response) => response.json())
         .then((data) => displayWeather(data))
@@ -59,28 +73,28 @@ function displayWeather(data) {
         dt,
         name,
         weather: [{ icon, description }],
-        main: { temp , feels_like, humidity },
+        main: { temp, feels_like, humidity },
         wind: { speed },
         sys: { sunrise, sunset },
-        } = data
-        
-        currentDate.textContent = formatDate(dt);
-        cityName.textContent = name;
-        weatherIcon.src = `./assets/${icon}.svg `
-        weatherDescription.textContent = description;
-        currentTemperature.textContent = `${Math.round(temp)}ºC`;
-        windSpeed.textContent = `${Math.round(speed * 3.6)}Km/H`;
-        feelsLIkeTemperature.textContent = `${Math.round(feels_like)}ºC`;
-        currentHumidity.textContent = `${humidity}%`;
-        sunriseTime.textContent = formatTime(sunrise);
-        sunsetTime.textContent = formatTime(sunset);
+    } = data
+
+    currentDate.textContent = formatDate(dt);
+    cityName.textContent = name;
+    weatherIcon.src = `./assets/${icon}.svg `
+    weatherDescription.textContent = description;
+    currentTemperature.textContent = `${Math.round(temp)}ºC`;
+    windSpeed.textContent = `${Math.round(speed * 3.6)}Km/H`;
+    feelsLIkeTemperature.textContent = `${Math.round(feels_like)}ºC`;
+    currentHumidity.textContent = `${humidity}%`;
+    sunriseTime.textContent = formatTime(sunrise);
+    sunsetTime.textContent = formatTime(sunset);
 }
 
 function formatDate(epochTime) {
     let date = new Date(epochTime * 1000)
-    let formattedDate = date.toLocaleDateString('pt-BR', {month: "long", day: 'numeric'})
+    let formattedDate = date.toLocaleDateString('pt-BR', { month: "long", day: 'numeric' })
     return `Hoje, ${formattedDate}`
-    
+
 }
 
 function formatTime(epochTime) {

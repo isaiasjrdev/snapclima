@@ -62,13 +62,13 @@ body{
 
 .header__current-date{
     color: #a2a2be;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 15px;
 }
 
 .header__city-name{
     font-weight: 500;
-    font-size: 20px;
+    font-size: 24px;
     margin-top: 6px;
 }
 
