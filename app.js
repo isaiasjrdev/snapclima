@@ -21,20 +21,6 @@ citySearchButton.addEventListener('click', () => {
     getCityWeather(cityName)
 })
 
-/* 
-citySearchInput.addEventListener('keypress', 'click' (event) => {
-    if (event.key === 'Enter' || 'click' === citySearchButton) {
-        let cityName = citySearchInput.value
-        getCityWeather(cityName)
-    }   
-})
-
-citySearchButton.addEventListener('click', () => {
-    let cityName = citySearchInput.value
-    getCityWeather(cityName)
-
-*/
-
 //https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
 
 navigator.geolocation.getCurrentPosition(
