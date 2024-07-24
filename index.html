@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" maximum-scale="1">
     
     <link rel="shortcut icon" href="./assets/icon.png" type="image/x-icon">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
@@ -15,6 +15,15 @@
     <title>Snapclima</title>
 </head>
 <body>
+    
+    <div class="theme">
+        <input type="checkbox" class="checkbox" id="chk"/>
+        <label class="label" for="chk">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+          <div class="ball"></div>
+        </label>
+      </div>
     
     <header class="header">
         <div class="header__city-search-bar">
@@ -33,6 +42,7 @@
         <div class="current-temperature__info-label">Tempo agora</div>
         <div class="current-temperature__current-temperature" id="current-temperature">...</div>
     </section>
+
     
     <div class="bottom-container">
         <section class="temperature-details">
@@ -70,6 +80,7 @@
     </div>
 
     <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
 </body>
 </html>
 
