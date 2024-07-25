@@ -28,15 +28,6 @@ body{
     align-items: end;
 }
 
-.dark {
-    background: #292c35;
-    color: #f3f4fb;
-  }
-
-  sunset-sunrise.dark {
-    color: #292c35;
-  }
-  
   .checkbox {
     display: flex;
     justify-content: center;
@@ -223,3 +214,8 @@ body{
     flex-direction: column;
     align-items: center;
 }
+
+.dark {
+    background: #292c35;
+    color: #f3f4fb;
+  }

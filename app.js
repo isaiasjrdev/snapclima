@@ -14,7 +14,7 @@ const currentHumidity = document.getElementById('current-humidity');
 const sunriseTime = document.getElementById('sunrise-time');
 const sunsetTime = document.getElementById('sunset-time');
 const chk = document.getElementById('chk');
-const container = document.querySelector('.bottom-container')
+const container = document.querySelector('#container')
 
 const api_key = "0f1f609cb8d4a0df013d968a4f510e1a";
 
@@ -95,3 +95,4 @@ function formatTime(epochTime) {
 chk.addEventListener('change', () => {
     document.body.classList.toggle('dark')
   })
+
